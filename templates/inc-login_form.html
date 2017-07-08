@@ -1,0 +1,22 @@
+<div class="auth_form">
+    {% if user.is_authenticated %}
+    <p>Здравствуй, <a href="/profile/">{{ user.username }}</a></p>
+        <p>
+            <form method="post" action="/logout/">
+            {% csrf_token %}
+            <input class="auth_btn" type="submit" value="Выйти">
+            </form>
+        </p>
+    {% else %}
+        <form method="post" action="/login/">
+            {% csrf_token %}
+            <p><input class="auth_text_str" type="text" name="login" value="" placeholder="Логин"></p>
+            <p><input class="auth_text_str" type="password" name="password" value="" placeholder="Пароль"></p>
+            <p><input class="auth_btn" type="submit" value="Войти"></p>
+        </form>
+        <p><a href="/registration/">Зарегистрироваться</a> </p>
+        {% if errors %}
+            <p class="error">Не верный логин или пароль.</p>
+        {% endif %}
+    {% endif %}
+</div>

@@ -1,0 +1,99 @@
+{% csrf_token %}
+<div class="edit_profile-form">
+<form method="post" action="/profile/edit/">
+    <span class="hidden" id="user_id">{{ id }}</span>
+    <table>
+{#        <tr>#}
+{#            <td>#}
+{#                <b>{{ uform.username.label_tag }}</b>#}
+{#            </td>#}
+{#            <td>#}
+{#                {{ uform.username }}#}
+{#                {% if uform.username.errors %}#}
+{#                    <span class="error">{{ uform.username.errors }}</span>#}
+{#                {% endif %}#}
+{#            </td>#}
+{#        </tr>#}
+        <tr>
+            <td>
+                <b>{{ uform.first_name.label_tag }}</b>
+            </td>
+            <td>
+                {{ uform.first_name }}
+                {% if uform.first_name.errors %}
+                    <span class="error">{{ uform.first_name.errors }}</span>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>{{ uform.last_name.label_tag }}</b>
+            </td>
+            <td>
+                {{ uform.last_name }}
+                {% if uform.last_name.errors %}
+                    <span class="error">{{ uform.last_name.errors }}</span>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>{{ pform.middle_name.label_tag }}</b>
+            </td>
+            <td>
+                {{ pform.middle_name }}
+                {% if pform.middle_name.errors %}
+                    <span class="error">{{ pform.middle_name.errors }}</span>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>{{ uform.email.label_tag }}</b>
+            </td>
+            <td>
+                {{ uform.email }}
+                {% if uform.email.errors %}
+                    <span class="error">{{ uform.email.errors }}</span>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>{{ pform.sex.label_tag }}</b>
+            </td>
+            <td>
+                {{ pform.sex }}
+                {% if pform.sex.errors %}
+                    <span class="error">{{ pform.sex.errors }}</span>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>{{ pform.birthday.label_tag }}</b>
+            </td>
+            <td>
+                {{ pform.birthday }}
+                {% if pform.birthday.errors %}
+                    <span class="error">{{ pform.birthday.errors }}</span>
+                {% endif %}
+            </td>
+        </tr>
+{#        <tr>#}
+{#            <td>#}
+{#                <b>{{ pform.userpic.label_tag }}</b>#}
+{#            </td>#}
+{#            <td>#}
+{#                {{ pform.userpic }}#}
+{#                {% if pform.userpic.errors %}#}
+{#                    <span class="error">{{ pform.userpic.errors }}</span>#}
+{#                {% endif %}#}
+{#            </td>#}
+{#        </tr>#}
+    </table>
+<br>
+<input class="" type="submit" value="Сохранить изменения">
+</form>
+</div>
+

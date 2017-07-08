@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            | Psychotron
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href='/static/css/style.css'>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="main_menu">
+                <div class="link-logo"><a href="/">PSYCHOTRON</a></div>
+                <div class="mid-col"><a href="/tests/">тесты</a> </div>
+                {% if user.is_authenticated %}
+                <div class="user_profile-link"><a href="/profile/" class="link-text-profile">{{ user.username }}</a></div>
+                    <div class="logout-btn">
+                        <form method="post" action="/logout/">
+                        {% csrf_token %}
+                        <input type="submit" value="Выйти">
+                        </form>
+                    </div>
+                {% endif %}
+                </div>
+        <div class="content">
+        {% if user.is_authenticated or request.path == '/registration/' %}
+            {% block content %}
+            {% endblock %}
+        {% else %}
+            <p>{% include 'inc-login_form.html' %}</p>
+        {% endif %}
+        </div>
+    </div>
+</body>
+</html>

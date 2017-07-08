@@ -1,0 +1,15 @@
+ {% extends 'base.html' %}
+{% if user.is_authenticated %}
+    {% block title %}
+        {{ user.username }} {{ block.super }}
+    {% endblock %}
+    {% block stuff %}
+        <div class="content">
+        <br><br>
+            <p>Здравствуй, {{ user.username }}, скоро здесь будет твой личный кабинет.</p>
+        </div>
+    {% endblock %}
+{% else %}
+    <p class="error">Вы не авторизованы</p>
+    {% include 'inc-login_form.html' %}
+{% endif %}

@@ -1,0 +1,11 @@
+{% for user in users %}
+    <li>{{ user }}
+        <button type="button" aria-label="Edit"
+                onclick="fill_form({{ user.id }})">
+            изменить
+        </button>
+        <a href="delete/user/{{ user.id }}">
+            удалить
+        </a>
+    </li>
+{% endfor %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+        Регистрация {{ block.super }}
+    {% endblock %}
+{% block content %}
+{% csrf_token %}
+    <h1>Регистрация</h1>
+    <div class="reg">
+    <form class="reg_form" method="post" action="/registration/">
+        <table class="reg_table">
+            {% for field in reg_form %}
+                <tr>
+                    <td class="reg_table_label">
+                        {{ field.label_tag }}
+                    </td>
+                    <td class="reg_table_input">
+                        <div>
+                            <ul>
+                                {% for error in field.errors %}
+                                    <li class="error">errors:{{ error }}</li>
+                                {% endfor %}
+                                {{ field }}
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <input class="submit_btn" type="submit" value="Зарегистрироваться">
+    </form>
+    </div>
+{% endblock %}

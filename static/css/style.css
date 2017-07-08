@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+}
+
+h1 {
+    padding-bottom: 20px;
+    padding-left: 30px;
+}
+
+.wrapper {
+    display: table;
+    width: 1200px;
+    min-height: 500px;
+    height: 100%;
+    border: solid 1px;
+    border-color: black;
+    margin: 0 auto;
+    font-family: Calibri;
+}
+
+
+.header {
+    display: table;
+    height: 150px;
+}
+
+.content {
+    display: table;
+    height: 100%;
+    width: 1200px;
+    padding: 30px;
+}
+
+.test_form_block {
+    display: block;
+    min-height: 100%;
+}
+
+.submit_btn {
+    margin-left: 500px;
+}
+
+/* Главное меню */
+.main_menu {
+    margin: 0 auto;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    min-height: 40px;
+}
+
+.main_menu a {
+    font-size: 20px;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.main_menu a:hover {
+    color: silver;
+    text-decoration: none;
+}
+
+.link-logo {
+    display: block;
+    float: left;
+}
+
+.link-logo a {
+    font-size: 30px;
+}
+
+.link-logo a:hover {
+    font-size: 30px;
+    background: black;
+    color: white;
+}
+
+.mid-col {
+    display: block;
+    float: left;
+    min-height: inherit;
+    min-width: 850px;
+}
+
+.user_profile-link {
+    display: block;
+    float: left;
+}
+
+a.link-text-profile {
+    color: chartreuse;
+    text-align: right;
+}
+
+.logout-btn {
+    display: block;
+    float: left;
+}
+/* Конец меню */
+
+/* Форма аутентификации */
+.auth_form {
+    display: block;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 10px;
+    border-color: black;
+    border: solid;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.auth_form input {
+    width: 90%;
+    margin: 5px;
+    padding: 10px;
+}
+
+.error {
+    color: red;
+}
+
+/* Форма регистрации */
+.reg {
+    margin: auto;
+    padding: 10px;
+}
+
+.reg_form {
+    margin: auto;
+    max-width: 700px;
+}
+
+.reg_form input {
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+}
+
+.reg_table_label {
+    text-align: left;
+    font-weight: bold;
+}
+
+.reg_table_input {
+    text-align: left;
+}
+
+/*Отображение тестов*/
+.test_form_block {
+    margin: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+/*Профиль*/
+.user_info {
+    text-decoration: none;
+}
+
+.user_info ul li {
+    list-style-type: none;
+}
+
+.edit_profile-form ul li {
+    list-style-type: none;
+    display: inline;
+}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+    {% block title %}
+        Каталог тестов {{ block.super }}
+    {% endblock %}
+    {% block content %}
+        <div class="tests_list">
+        <h1> Доступные тесты:</h1>
+        <ul>
+            {% for test in available_tests %}
+            <li>
+                <a href={{ test.url }}>{{ test.testName }}</a> - {{ test.description }}
+            </li>
+            {% endfor %}
+        </ul>
+        </div>
+    {% endblock %}

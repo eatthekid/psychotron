@@ -1,0 +1,9 @@
+.user_data_form {
+    float: left;
+    margin-left: -200px;
+}
+
+.row {
+    float: left;
+    min-width: 700px;
+}

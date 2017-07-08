@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+    EPI (Тест темперамента Айзенка) {{ block.super }}
+{% endblock %}
+{% block content %}
+    {% if result %}
+        {{ result }}
+    {% else %}
+        <h1> Тест темперамента Айзенка (EPI)</h1>
+        <div class="test_form_block">
+        {% csrf_token %}
+            <form action="/tests/EPI/" method="post">
+                <ol>
+                    {% for question in questions %}
+                    <li>{{ question }}<br>
+                        <input type="radio" name={{ forloop.counter }} value="yes"> Да
+                        <input type="radio" name={{ forloop.counter }} value="no"> Нет
+                    </li>
+                    {% endfor %}
+                </ol>
+                <input type="submit" class="submit_btn" value="Обработать результат">
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}
+
+
+

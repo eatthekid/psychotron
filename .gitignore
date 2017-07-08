@@ -1,0 +1,11 @@
+﻿db.sqlite3
+.idea/
+logs/
+admin_app/__pycache__
+admin_app/migrations
+main_app/__pycache__
+main_app/migrations
+tests_app/__pycache__
+tests_app/migrations
+Psychotron/__pycache__
+Psychotron/__init__.py

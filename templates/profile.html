@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% if user.is_authenticated %}
+    {% block title %}
+        {{ user.username }} {{ block.super }}
+    {% endblock %}
+    {% block content %}
+        <h1>{{ user.username }}</h1>
+        {% if request.path == '/profile/edit/' %}
+            {% include 'inc-edit-profile_form.html' %}
+        {% else %}
+        <div class="user_info">
+            <ul>
+                <li>
+                    Имя: {{ user.first_name }}
+                </li>
+                <li>
+                    Фамилия: {{ user.last_name }}
+                </li>
+                <li>
+                    Отчество: {{ user_profile.middle_name }}
+                </li>
+                <li>
+                    Дата рождения: {{ user_profile.birthday }}
+                </li>
+                <li>
+                    Пол: {{ user_profile.sex }}
+                </li>
+                <li>
+                    Email: {{ user.email }}
+                </li>
+            </ul>
+            <br>
+            <form method="get" action="/profile/edit/">
+                <input type="submit" value="Редактировать">
+            </form>
+        </div>
+        {% endif %}
+    {% endblock %}
+{% else %}
+    <p class="error">Вы не авторизованы</p>
+    {% include 'inc-login_form.html' %}
+{% endif %}
